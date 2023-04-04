@@ -1,0 +1,10 @@
+@import '@/styles/colors.scss';
+
+.button {
+  background-color: $purple-300;
+  color: $white;
+  border: none;
+  padding: 8px 20px;
+  width: 100%;
+  text-transform: uppercase;
+}
