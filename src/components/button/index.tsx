@@ -1,21 +1,19 @@
-import Styles from './styles.module.scss';
+import Button from '@mui/material/Button';
+import Styles from './styles.module.scss'
 
-type ButtonProps = {
-  onClick?: () => void;
-  disabled?: boolean;
-  text: string;
-}
-
-function Button({ onClick, disabled, text }: ButtonProps) {
+function BaseButton() {
   return (
-    <button 
-      className={Styles.button} 
-      onClick={onClick}
-      disabled={disabled}
+    <Button
+      variant="contained"
+      color="primary"
+      fullWidth
+      type="submit"
+      color="success"
+      className={Styles.button}
     >
-      {text}
-    </button>
+      Entrar
+    </Button>
   );
 }
 
-export default Button;
+export default BaseButton;
