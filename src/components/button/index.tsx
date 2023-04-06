@@ -5,10 +5,10 @@ function BaseButton() {
   return (
     <Button
       variant="contained"
-      color="primary"
       fullWidth
       type="submit"
       color="success"
+      size="large"
       className={Styles.button}
     >
       Entrar
