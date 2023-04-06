@@ -3,13 +3,31 @@ import { FormControl, InputLabel, FilledInput, InputAdornment, IconButton } from
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 function PasswordInput() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
+
+  const validatePassword = (password: string): string => {
+    if (!password) {
+      return 'Senha é obrigatória';
+    }
+
+    if (password.length < 6) {
+      return 'Senha deve ter no mínimo 6 caracteres';
+    }
+
+    return '';
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setError(validatePassword(event.target.value))
+  }
+
 
   return (
     <FormControl
@@ -25,6 +43,7 @@ function PasswordInput() {
       <FilledInput
         id="outlined-adornment-password"
         type={showPassword ? 'text' : 'password'}
+        onChange={handleChange}
         color="success"
         endAdornment={
           <InputAdornment position="end">
@@ -39,6 +58,7 @@ function PasswordInput() {
           </InputAdornment>
         }
       />
+      { error !== '' && <p className='error'>{ error }</p>}
     </FormControl>
   );
 }
