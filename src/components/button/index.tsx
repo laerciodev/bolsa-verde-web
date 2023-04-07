@@ -3,16 +3,18 @@ import Styles from './styles.module.scss'
 
 function BaseButton() {
   return (
-    <Button
-      variant="contained"
-      fullWidth
-      type="submit"
-      color="success"
-      size="large"
-      className={Styles.button}
-    >
-      Entrar
-    </Button>
+    <span style={{ margin: '16px 0', width: '100%' }}>
+      <Button
+        variant="contained"
+        fullWidth
+        type="submit"
+        color="success"
+        size="large"
+        className={Styles.button}
+      >
+        Entrar
+      </Button>
+    </span>
   );
 }
 
