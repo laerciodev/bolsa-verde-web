@@ -1,6 +1,7 @@
 import EmailInput from '@/components/email-input';
 import PasswordInput from '@/components/password-input';
 import Button from '@/components/button';
+import SignUpButton from '@/components/signup-button';
 import Styles from './styles.module.scss';
 
 function Login() {
@@ -10,6 +11,7 @@ function Login() {
       <EmailInput />
       <PasswordInput />
       <Button />
+      <SignUpButton />
     </div>
   )
 }
