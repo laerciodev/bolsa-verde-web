@@ -1,7 +1,11 @@
 import Button from '@mui/material/Button';
 import Styles from './styles.module.scss';
 
-function BaseButton() {
+interface BaseButtonProps {
+  name: string;
+}
+
+function BaseButton(props: BaseButtonProps) {
   return (
     <span style={{ margin: '16px 0', width: '100%' }}>
       <Button
@@ -12,7 +16,7 @@ function BaseButton() {
         size="large"
         className={Styles.button}
       >
-        Entrar
+        { props.name }
       </Button>
     </span>
   );
