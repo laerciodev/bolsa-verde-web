@@ -4,6 +4,7 @@ import PasswordInput from '@/components/password-input';
 import Button from '@/components/button';
 import SignUpButton from '@/components/signup-button';
 import { Snackbar } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
 
@@ -11,6 +12,7 @@ function Login() {
   const [password, setPassword] = useState<string>('');
   const [openToast, setOpenToast] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string>('');
+  const navigate = useNavigate();
 
   function sendPassword(password: string) {
     setPassword(password);
@@ -30,8 +32,7 @@ function Login() {
     }
 
     if (email === 'user@email.com' && password === '123456') {
-      setOpenToast(true);
-      setToastMessage('Login feito com sucesso');
+      navigate('/dashboard');
     } else {
       setOpenToast(true);
       setToastMessage('Usuário ou senha inválidos');
