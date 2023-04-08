@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { FormControl, InputLabel, FilledInput, InputAdornment, IconButton } from '@mui/material';
 import { Email } from '@mui/icons-material';
 
-function EmailInput() {
+interface EmailInputProps {
+  sendEmail: (email: string) => void;
+}
+
+function EmailInput(props: EmailInputProps) {
   const [email, setEmail] = useState<string>('');
   const [error, setError] = useState<string>('');
 
@@ -23,6 +27,7 @@ function EmailInput() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
     setError(validateEmail(event.target.value));
+    props.sendEmail(event.target.value);
   };
 
   return (
