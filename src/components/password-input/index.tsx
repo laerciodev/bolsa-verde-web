@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { FormControl, InputLabel, FilledInput, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 
-function PasswordInput() {
+interface PasswordInputProps {
+  confirmPasswordField?: boolean;
+}
+
+function PasswordInput(props: PasswordInputProps) {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
 
@@ -28,6 +32,9 @@ function PasswordInput() {
     setError(validatePassword(event.target.value))
   }
 
+  function printId() {
+    return `outlined-adornment${props.confirmPasswordField ? '-confirm' : ''}-password`;
+  }
 
   return (
     <FormControl
@@ -35,13 +42,13 @@ function PasswordInput() {
       fullWidth
       variant="outlined">
       <InputLabel
-        htmlFor="outlined-adornment-password"
+        htmlFor={printId()}
         color="success"
       >
-        Password
+        { props.confirmPasswordField ? 'Confirmar Senha' : 'Senha' }
       </InputLabel>
       <FilledInput
-        id="outlined-adornment-password"
+        id={printId()}
         type={showPassword ? 'text' : 'password'}
         onChange={handleChange}
         color="success"
