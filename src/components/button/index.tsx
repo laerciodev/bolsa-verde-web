@@ -3,6 +3,7 @@ import Styles from './styles.module.scss';
 
 interface BaseButtonProps {
   name: string;
+  onclick?: () => void;
 }
 
 function BaseButton(props: BaseButtonProps) {
@@ -15,6 +16,7 @@ function BaseButton(props: BaseButtonProps) {
         color="success"
         size="large"
         className={Styles.button}
+        onClick={props.onclick}
       >
         { props.name }
       </Button>
