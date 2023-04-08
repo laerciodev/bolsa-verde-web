@@ -1,7 +1,9 @@
+import SearchInput from "@/components/search-input";
+
 const Dashboard = () => {
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div style={{ margin: '16px' }}>
+      <SearchInput />
     </div>
   );
 };
