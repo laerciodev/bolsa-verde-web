@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import Styles from './styles.module.scss'
+import Styles from './styles.module.scss';
 
 function BaseButton() {
   return (
