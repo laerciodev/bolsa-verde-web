@@ -9,7 +9,7 @@ function Login() {
     <div className="container-page">
       <EmailInput />
       <PasswordInput />
-      <Button />
+      <Button name="Entrar" />
       <SignUpButton />
     </div>
   )

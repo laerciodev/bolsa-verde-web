@@ -1,6 +1,7 @@
 import NameInput from '@components/name-input';
 import EmailInput from '@/components/email-input';
 import PasswordInput from '@/components/password-input';
+import BaseButton from '@/components/button';
 
 const SignUp: React.FC  = () => {
   return (
@@ -8,7 +9,8 @@ const SignUp: React.FC  = () => {
       <NameInput />
       <EmailInput />
       <PasswordInput />
-      <PasswordInput />
+      <PasswordInput confirmPasswordField />
+      <BaseButton name="Cadastrar" />
     </div>
   );
 }
