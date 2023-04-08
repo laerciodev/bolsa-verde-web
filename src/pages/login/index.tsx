@@ -3,11 +3,14 @@ import EmailInput from '@/components/email-input';
 import PasswordInput from '@/components/password-input';
 import Button from '@/components/button';
 import SignUpButton from '@/components/signup-button';
+import { Snackbar } from '@mui/material';
 
 function Login() {
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [openToast, setOpenToast] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string>('');
 
   function sendPassword(password: string) {
     setPassword(password);
@@ -17,15 +20,21 @@ function Login() {
     setEmail(email);
   }
 
+  const handleClose = () => {
+    setOpenToast(false);
+  };
+
   function submit() {
     if (!email || !password) {
       return;
     }
 
     if (email === 'user@email.com' && password === '123456') {
-      console.log('login feito com sucesso');
+      setOpenToast(true);
+      setToastMessage('Login feito com sucesso');
     } else {
-      console.log('usuário ou senha inválidos');
+      setOpenToast(true);
+      setToastMessage('Usuário ou senha inválidos');
     }
   }
 
@@ -38,6 +47,12 @@ function Login() {
         onclick={submit}
       />
       <SignUpButton />
+      <Snackbar
+        open={openToast}
+        autoHideDuration={3000}
+        message={toastMessage}
+        onClose={handleClose}
+      />
     </div>
   )
 }
