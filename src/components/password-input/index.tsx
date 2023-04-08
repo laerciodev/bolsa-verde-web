@@ -4,6 +4,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 interface PasswordInputProps {
   confirmPasswordField?: boolean;
+  sendPassword: (password: string) => void;
 }
 
 function PasswordInput(props: PasswordInputProps) {
@@ -30,6 +31,7 @@ function PasswordInput(props: PasswordInputProps) {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setError(validatePassword(event.target.value))
+    props.sendPassword(event.target.value);
   }
 
   function printId() {
