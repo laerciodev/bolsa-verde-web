@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FormControl, InputLabel, FilledInput, InputAdornment, IconButton, TextField } from '@mui/material';
+import { FormControl, InputLabel, FilledInput, InputAdornment, IconButton } from '@mui/material';
 import { Email } from '@mui/icons-material';
 
 function EmailInput() {
