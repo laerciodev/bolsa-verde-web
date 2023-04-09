@@ -1,8 +1,14 @@
 # bolsa-verde-web
 
+### Instalação
+
+Ao clonar o projeto, execute o comando npm install para instalar as dependências de desenvolvimento na sequência npm run dev para executar localmente.
+
 ### Como fazer login?
 
 Para fazer login é necessário digitar no e-mail (user@email.com) e a senha (123456)
+
+### Funcionalidade de cadastro ainda não está funcionando
 
 ### screenshots
 
