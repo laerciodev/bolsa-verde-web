@@ -50,6 +50,7 @@ function EmailInput(props: EmailInputProps) {
           <InputAdornment position="end">
             <IconButton
               edge="end"
+              aria-label='Digitar e-mail do usuário'
             >
               <Email />
             </IconButton>
