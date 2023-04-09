@@ -20,6 +20,7 @@ function SearchInput() {
           <InputAdornment position="end">
             <IconButton
               edge="end"
+              aria-label='Pesquisar por ação de empresa'
             >
               <Search />
             </IconButton>
