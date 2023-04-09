@@ -1,5 +1,9 @@
 # bolsa-verde-web
 
+### Como fazer login?
+
+Para fazer login é necessário digitar no e-mail (user@email.com) e a senha (123456)
+
 ### screenshots
 
 Tela de login
