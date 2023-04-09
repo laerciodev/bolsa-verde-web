@@ -1,0 +1,19 @@
+.companyContainer {
+  display: flex;
+}
+
+.companyInfo,
+.companyTitle,
+.companyPrice {
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+.companyTitle {
+  font-size: 16px;
+}
+
+.companyPrice {
+  font-size: 14px;
+  color: #999;
+}
