@@ -57,7 +57,7 @@ function PasswordInput(props: PasswordInputProps) {
         endAdornment={
           <InputAdornment position="end">
             <IconButton
-              aria-label="toggle password visibility"
+              aria-label="Exibe ou esconde senha"
               onClick={handleClickShowPassword}
               onMouseDown={handleMouseDownPassword}
               edge="end"
