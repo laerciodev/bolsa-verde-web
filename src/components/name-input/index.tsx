@@ -39,6 +39,7 @@ function NameInput() {
           <InputAdornment position="end">
             <IconButton
               edge="end"
+              aria-label='Digitar nome completo do usuário'
             >
               <Person />
             </IconButton>
