@@ -4,6 +4,7 @@ import Styles from './styles.module.scss';
 interface BaseButtonProps {
   name: string;
   onclick?: () => void;
+  fullWidth?: boolean;
 }
 
 function BaseButton(props: BaseButtonProps) {
@@ -11,7 +12,7 @@ function BaseButton(props: BaseButtonProps) {
     <span style={{ margin: '16px 0', width: '100%' }}>
       <Button
         variant="contained"
-        fullWidth
+        fullWidth={props.fullWidth}
         type="submit"
         color="success"
         size="large"
