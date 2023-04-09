@@ -45,6 +45,7 @@ function Login() {
       <PasswordInput sendPassword={sendPassword} />
       <Button
         name="Entrar"
+        fullWidth
         onclick={submit}
       />
       <SignUpButton />
