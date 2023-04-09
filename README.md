@@ -1,5 +1,9 @@
 # bolsa-verde-web
 
+### Sobre
+
+Este repositório é o desenvolvimento do portal web bolsa verde feito em React e Typescript.
+
 ### Instalação
 
 Ao clonar o projeto, execute o comando npm install para instalar as dependências de desenvolvimento na sequência npm run dev para executar localmente.
