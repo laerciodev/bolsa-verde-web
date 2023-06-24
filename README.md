@@ -16,6 +16,10 @@ Para fazer login é necessário digitar no e-mail (user@email.com) e a senha (12
 
 ### screenshots
 
+Tela de SignUp
+![image](https://github.com/laerciodev/bolsa-verde-web/assets/8559900/9749b51e-58d7-43a4-85c8-f33175601950)
+
+
 Tela de login
 
 Mobile
@@ -26,15 +30,6 @@ Desktop
 
 ![image](https://user-images.githubusercontent.com/8559900/230792733-58ab80bc-2440-4e19-aa40-1837f0a134be.png)
 
-Tela de cadastro
-
-Mobile
-
-![image](https://user-images.githubusercontent.com/8559900/230792792-79df15bf-8d72-4af1-80ff-1533ad745df5.png)
-
-Desktop
-
-![image](https://user-images.githubusercontent.com/8559900/230792803-9e81a89c-677f-4210-9da1-b01367491ddd.png)
 
 Tela de Dashboard
 
