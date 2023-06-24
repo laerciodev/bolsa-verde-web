@@ -2,7 +2,12 @@ import { useState } from 'react';
 import { FormControl, InputLabel, FilledInput, InputAdornment, IconButton } from '@mui/material';
 import { Person } from '@mui/icons-material';
 
-function NameInput() {
+interface NameInputProps {
+  name: string;
+  ariaLabel: string;
+}
+
+function NameInput(props: NameInputProps) {
   const [name, setName] = useState<string>('');
   const [error, setError] = useState<string>('');
 
@@ -28,7 +33,7 @@ function NameInput() {
         htmlFor="outlined-adornment-name"
         color="success"
       >
-        Nome completo
+        { props.name }
       </InputLabel>
       <FilledInput
         id="outlined-adornment-name"
@@ -39,7 +44,7 @@ function NameInput() {
           <InputAdornment position="end">
             <IconButton
               edge="end"
-              aria-label='Digitar nome completo do usuário'
+              aria-label={props.ariaLabel}
             >
               <Person />
             </IconButton>

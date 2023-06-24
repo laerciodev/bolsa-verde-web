@@ -1,17 +1,28 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 import NameInput from '@components/name-input';
 import EmailInput from '@/components/email-input';
 import PasswordInput from '@/components/password-input';
 import BaseButton from '@/components/button';
 import { Snackbar } from '@mui/material';
 
+
 const SignUp: React.FC  = () => {
+  const [page, changePage] = useState<string>('user');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
   const [openToast, setOpenToast] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string>('');
   
+  function handleChange(value: ChangeEvent<HTMLInputElement>) {
+    changePage(value.target.value);
+  }
+
   function sendEmail(email: string) {
     setEmail(email);
   }
@@ -47,7 +58,23 @@ const SignUp: React.FC  = () => {
 
   return (
     <div className='container-page'>
-      <NameInput />
+      <FormControl fullWidth>
+        <FormLabel id="demo-row-radio-buttons-group-label" color='success'>
+          Escolha uma opção:
+        </FormLabel>
+        <RadioGroup
+          row
+          aria-labelledby="demo-row-radio-buttons-group-label"
+          name="row-radio-buttons-group"
+        >
+          <FormControlLabel value="user" control={<Radio color='success' onChange={handleChange}/>} label="Usuário" />
+          <FormControlLabel value="company" control={<Radio color='success' onChange={handleChange} />} label="Empresa" />
+        </RadioGroup>
+      </FormControl>
+      <NameInput
+        name={page === 'user' ? 'Nome completo' : 'Nome fantasia'}
+        ariaLabel={page === 'user' ? 'Digitar nome completo do usuário' : 'Digitar nome fantasia da empresa'}
+      />
       <EmailInput sendEmail={sendEmail} />
       <PasswordInput sendPassword={sendPassword} />
       <PasswordInput sendPassword={sendConfirmPassword} confirmPasswordField />
